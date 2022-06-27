@@ -14,13 +14,13 @@ class Songs extends Controller{
 
     public static function get_last() {
        
-        return ultimi_ascolti::select('img', 'url')->where('id_user', Session::get('user_id'))->take(6)->get();
+        return ultimi_ascolti::select('img', 'url')->where('id_user', Session::get('user_id'))->get();
 
     }
 
     public static function get_fav() {
        
-        return favorites::select('img', 'url')->where('id_user', Session::get('user_id'))->take(6)->get();
+        return favorites::select('img', 'url')->where('id_user', Session::get('user_id'))->get();
 
     }
 
