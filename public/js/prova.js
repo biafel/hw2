@@ -100,15 +100,13 @@ function onJson(json) {
 function addLastListened(event){
   console.log(event);
 
-  var childElements = event.srcElement.parentElement.childNodes;
+  var img_selected = event.srcElement.parentElement.childNodes[1].currentSrc;
+  var url_selected = event.srcElement.parentElement.childNodes[3].href;
 
-  var img = encodeURIComponent(childElements[1].src);
-  var href = encodeURIComponent(childElements[3].href);
+  img_selected = img_selected.substring(24 ,img_selected.length); 
+  url_selected = url_selected.substring(31 ,url_selected.length);
 
-  console.log(img);
-  console.log(href);
-
-  fetch("last_rep/"+img+"/"+href)/*.then(onrespNew).then(onjnew); */;
+  fetch("last_rep/"+img_selected+"/"+url_selected).then(onrespNew).then(onjnew);
 }
 
 
