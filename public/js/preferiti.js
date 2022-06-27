@@ -21,7 +21,7 @@ function remFav(event){
 
     while(div.firstChild){
 
-        div.removeChild(div.firstChild);
+        div.removeChild(div.lastChild);
 
     }
 
