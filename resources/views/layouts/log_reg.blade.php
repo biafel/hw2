@@ -5,7 +5,7 @@
     </head>
     <body>
         <main>
-            <form method='post'>
+            <form name='nome_form' method='post'>
                 @yield('info');
             </form>
         </main>
