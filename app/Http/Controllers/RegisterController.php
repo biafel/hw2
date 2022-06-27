@@ -13,7 +13,6 @@ class RegisterController extends Controller {
     protected function create()
     {
         $request = request();
-        $ip = $request->ip();
 
         if($this->countErrors($request) === 0) {
             $newUser =  User::create([
@@ -21,10 +20,7 @@ class RegisterController extends Controller {
             'password' => $request['password'],
             'name' => $request['name'],
             'surname' => $request['surname'],
-            'email' => $request['email'],
-            'ip' => $ip,
-            'verified' => false,
-            ]);
+            'email' => $request['email']]);
             if ($newUser) {
                 Session::put('user_id', $newUser->id);
                 return redirect('welcome');
